@@ -1,32 +1,74 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+<div id="app">
+  <div id="menu">
+    <div class="empty"></div>
+    <div id="home" class="menu-item">
+      <router-link to="/">Home</router-link>
     </div>
-    <router-view />
+    <div id="create" class="menu-item">
+      <router-link to="/create">Create</router-link>
+    </div>
   </div>
+  <router-view/>
+  <div class="footer">
+    <a href='https://github.com/coribushman/cp3-journal'>Github</a>
+  </div>
+</div>
 </template>
 
+<script>
+export default {
+
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+* {
+  box-sizing: border-box;
+  font-family: Optima;
+  font-weight: 700;
 }
 
-#nav {
-  padding: 30px;
+
+#menu {
+  display: flex;
+  justify-content: right;
+  background-color: #262626;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.empty {
+  width: 80%;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.menu-item {
+  margin: 30px;
+  align-items: center;
 }
+
+#menu a {
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+}
+
+.footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   height: 2.5rem;
+   background-color: #262626;
+ }
+
+ .footer a {
+   color: white;
+   text-decoration: none;
+ }
+
+
+
 </style>
